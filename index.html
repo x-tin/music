@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="wrap" @click="mvHidden">
+    <!--播放主题区域-->
+    <div class="play_wrap" id="player">
+        <!--搜索区域-->
+        <div class="search_bar">
+            <div class="logo">joviality</div>
+            <input type="search" autocomplete="off" v-model="query" @keyup.enter="searchMusic">
+        </div>
+        <div class="center_con">
+            <div class="song_wrapper" data-mcs-theme="dark">
+                <ul class="song_list">
+                    <li v-for="value in musicList" class="mCustomScrollbar" data-mcs-theme="rounded-dots-dark">
+                        <a href="javascript:;">
+                            <img src="./images/play--filled%20(1).png" alt="" @click="playMusic(value.id)">
+                        </a>
+                        <b>{{ value.name }}</b>
+                        <span v-if="value.mvid!=0" @click="playMv(value.mvid)"><img src="./images/MV.png" alt=""></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cover">
+                <div id="song_cover" :class="{rotate:isPlaying}"><img :src="musicCover" alt=""></div>
+                <div class="des"> {{ quota }} </div>
+            </div>
+            <div class="comment" data-mcs-theme="dark">
+                <h3>热门留言</h3>
+                <ul>
+                    <li v-for="value in commentList">
+                        <span class="headImg">
+                            <img :src="value.user.avatarUrl" alt="">
+                        </span>
+                        <div class="commentRight">
+                            <b class="name">{{value.user.nickname}}</b>
+                            <p class="content">
+                                {{value.content}}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="audio_con">
+            <audio v-if="playing" :src="musicUrl" @play="play" @pause="pause" controls id="audio" autoplay></audio>
+        </div>
+        <div class="video_con" v-show="isShow">
+            <video :src="mvUrl" controls autoplay></video>
+            <div class="mask" @click="hide"><img src="./images/icon-cross-squre.png" alt=""></div>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="./js/minified/jquery-1.11.0.min.js"></script>
+<script src="./js/minified/jquery-ui-1.10.4.min.js"></script>
+<script src="js/minified/jquery.mousewheel.min.js"></script>
+<script src="./js/minified/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/main.js"></script>
+<script type='text/javascript'>
+    (function ($) {
+        $(window).load(function () {
+            $(".song_wrapper,.comment").mCustomScrollbar({
+                axis:"yx"
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

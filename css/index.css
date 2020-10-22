@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*定义颜色变量*/
+.rotate {
+  animation: start 5s linear infinite;
+}
+@keyframes start {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mCSB_container_wrapper > .mCSB_container {
+  padding-right: 0;
+}
+/*居中函数*/
+/*浮动*/
+.wrap .play_wrap {
+  width: 900px;
+  height: 600px;
+  background-color: rgba(155, 6, 20, 0.7);
+  position: relative;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*头部搜索部分*/
+  /*中间播放部分*/
+}
+.wrap .play_wrap .search_bar {
+  height: 50px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.wrap .play_wrap .search_bar .logo {
+  margin-left: 20px;
+  float: left;
+  line-height: 50px;
+  font-size: 30px;
+  font-family: "Adobe Gurmukhi";
+  color: #fff;
+}
+.wrap .play_wrap .search_bar input {
+  float: right;
+  margin-top: 8px;
+  height: 30px;
+  margin-right: 15px;
+  width: 250px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.wrap .play_wrap .center_con {
+  height: 500px;
+  width: 100%;
+  /*唱片*/
+  /*留言部分*/
+}
+.wrap .play_wrap .center_con .song_wrapper {
+  float: left;
+  width: 260px;
+  height: 100%;
+  overflow: auto;
+  /*播放列表*/
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list {
+  list-style: none;
+  width: 240px;
+  height: 500px;
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list > li {
+  white-space: nowrap;
+  width: 100%;
+  text-indent: 10px;
+  height: 34px;
+  line-height: 34px;
+  position: relative;
+  font-size: 14px;
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list > li:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list > li > a {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list > li b {
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+  top: 6px;
+}
+.wrap .play_wrap .center_con .song_wrapper .song_list > li span > img {
+  margin-top: 8px;
+  float: right;
+  margin-right: 15px;
+}
+.wrap .play_wrap .center_con .cover {
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+.wrap .play_wrap .center_con .cover #song_cover {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #0f0f0f;
+  overflow: hidden;
+}
+.wrap .play_wrap .center_con .cover #song_cover > img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .play_wrap .center_con .cover .des {
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  width: 300px;
+  height: 50px;
+  font-family: -apple-system;
+}
+.wrap .play_wrap .center_con .comment {
+  width: 240px;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+.wrap .play_wrap .center_con .comment ul {
+  list-style: none;
+}
+.wrap .play_wrap .center_con .comment ul li {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.wrap .play_wrap .center_con .comment ul li .headImg {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.wrap .play_wrap .center_con .comment ul li .headImg > img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .play_wrap .center_con .comment ul li .commentRight {
+  width: 150px;
+  height: 100%;
+  float: right;
+  margin-top: 10px;
+}
+.wrap .play_wrap .audio_con {
+  height: 50px;
+}
+.wrap .play_wrap .audio_con #audio {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+.wrap .play_wrap .video_con {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background-color: #000;
+}
+.wrap .play_wrap .video_con video {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrap .play_wrap .video_con .mask {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/*# sourceMappingURL=index.css.map */
